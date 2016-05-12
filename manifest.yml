@@ -1,0 +1,10 @@
+applications:
+- services:
+  - dialog-service
+  - natural_language_classifier
+  #host: buzzbot-${random-word}
+  #name: buzzbot
+  name: samplesupportbot
+  command: node app.js
+  path: .
+  memory: 256M

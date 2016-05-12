@@ -1,0 +1,37 @@
+Inovke the following curl command. Replace page id and access token.
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "setting_type":"call_to_actions",
+  "thread_state":"new_thread",
+  "call_to_actions":[
+    {
+      "message":{
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"generic",
+            "elements":[
+              {
+                "title":"Welcome to the Buzz Bot!",
+                "subtitle":"I will show you what is going on in the Twitterverse.",
+                "buttons":[
+                  {
+                    "type":"web_url",
+                    "title":"View Website",
+                    "url":"http://insights-search.mybluemix.net/"
+                  },
+                  {
+                    "type":"postback",
+                    "title":"Start Chatting",
+                    "payload":"hi"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}' "https://graph.facebook.com/v2.6/xxx/thread_settings?access_token=xxx"

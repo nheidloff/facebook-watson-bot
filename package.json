@@ -1,0 +1,23 @@
+{
+  "name": "facebook-watson-bot",
+  "version": "1.0.0",
+  "description": "Chatbot for Facebook that leverages IBM Watson",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cfenv": "1.0.3",
+    "express": "4.13.4",
+    "request": "^2.72.0",
+    "watson-developer-cloud": "~1.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Niklas Heidloff, @nheidloff, niklas_heidloff@de.ibm.com",
+  "license": "Apache License version 2",
+  "repository": {
+    "type": "",
+    "url": "https://github.com/nheidloff/facebook-watson-bot"
+  }
+}

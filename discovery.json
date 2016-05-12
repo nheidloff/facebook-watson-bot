@@ -1,0 +1,13 @@
+{
+  "discover": true,
+  "type": "sample_app",
+  "compute": [
+    "cloud_foundry"
+  ],
+  "runtimes": [
+    "node"
+  ],
+  "services": [
+    "WatsonDialog", "WatsonNaturalLanguageClassifier", "TwitterInsights"
+  ]
+}

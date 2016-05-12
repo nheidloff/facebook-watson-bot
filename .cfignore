@@ -1,0 +1,10 @@
+node_modules/
+screenshots/
+dialog.xml
+discovery.json
+LICENSE
+NOTICE
+nlc-training.csv
+README.md
+setupblot.txt
+app2.js

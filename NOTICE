@@ -1,0 +1,34 @@
+Chatbot for Facebook that leverages IBM Watson
+https://github.com/nheidloff/facebook-watson-bot
+© Copyright IBM Corp. 2016
+
+
+The following Node modules are used in the project but not included in the project:
+
+cfenv
+https://github.com/cloudfoundry-community/node-cfenv
+https://www.npmjs.com/package/cfenv
+ALv2: https://github.com/cloudfoundry-community/node-cfenv/blob/master/LICENSE.txt
+
+body-parser
+https://github.com/expressjs/body-parser
+https://www.npmjs.com/package/body-parser
+MIT: https://github.com/expressjs/body-parser/blob/master/LICENSE
+
+watson-developer-cloud
+https://github.com/watson-developer-cloud/node-sdk
+https://www.npmjs.com/package/watson-developer-cloud
+ALv2: https://github.com/watson-developer-cloud/node-sdk/blob/master/LICENSE
+
+express
+https://github.com/expressjs/express
+https://www.npmjs.com/package/express
+MIT: https://github.com/expressjs/express/blob/master/LICENSE
+
+request
+https://github.com/request/request
+https://www.npmjs.com/package/request
+ALv2: https://github.com/request/request/blob/master/LICENSE
+
+
+The project leverages the Facebook Messenger platform: https://developers.facebook.com/docs/messenger-platform/quickstart

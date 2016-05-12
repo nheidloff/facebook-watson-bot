@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dialog xsi:noNamespaceSchemaLocation="WatsonDialogDocument_1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <flow>
+        <folder label="Main">
+            <output>
+                <prompt selectionType="RANDOM">
+                    <item>Hi, I'll show you the latest buzz around a topic of your choice. What topic are you interested in?</item>
+                </prompt>
+                <goto ref="getUserInput_2442994"/>
+            </output>
+            <output>
+                <prompt selectionType="RANDOM">
+                    <item>Bye</item>
+                </prompt>
+                <getUserInput id="getUserInput_2442994">
+                    <search ref="folder_2442998"/>
+                </getUserInput>
+            </output>
+        </folder>
+        <folder label="Library">
+            <folder label="Live Content" id="folder_2447777">
+                <output>
+                    <prompt selectionType="RANDOM">
+                        <item>Alright. Here are the {Sentiment} tweets about {Topic}:$ExecCode$showTweets(sender, "{Topic}", "{Sentiment}")</item>
+                    </prompt>
+                </output>
+            </folder>
+            <folder label="Live Content" id="folder_2442998">
+                <input>
+                    <grammar>
+                        <item>*</item>
+                    </grammar>
+                    <action varName="Topic" operator="SET_TO_USER_INPUT"/>
+                    <output>
+                        <prompt selectionType="SEQUENTIAL">
+                            <item>Are you interested in positive or negative tweets?$ShowButtons$[{"type":"postback","title":"Positive","payload":"positive"},{"type":"postback","title":"Negative","payload":"negative"}]#3a84cfx63-nlc-5285</item>
+                        </prompt>
+                            <getUserInput>
+                                <input>
+                                    <grammar>
+                                        <item>positive</item>
+                                    </grammar>
+                                    <action varName="Sentiment" operator="SET_TO">positive</action>
+                                    <goto ref="folder_2447777"/>
+                                </input>
+                                <input>
+                                    <grammar>
+                                        <item>negative</item>
+                                    </grammar>
+                                    <action varName="Sentiment" operator="SET_TO">negative</action>
+                                    <goto ref="folder_2447777"/>
+                                </input>
+                                <input>
+                                    <grammar>
+                                        <item>*</item>
+                                    </grammar>
+                                    <action varName="Sentiment" operator="SET_TO">nothing</action>
+                                    <goto ref="folder_2442998"/>
+                                </input>
+                            </getUserInput>
+                    </output>
+                </input>
+            </folder>
+            <folder label="Storage"/>
+        </folder>
+        <folder label="Global"/>
+        <folder label="Concepts">
+            <concept>
+                <grammar>
+                    <item>positive</item>
+                    <item>good</item>
+                </grammar>
+            </concept>
+        </folder>
+    </flow>
+    <entities>
+    </entities>
+    <constants>
+    </constants>
+    <variables>
+        <var_folder name="Home">
+            <var name="Topic" type="TEXT"/>
+            <var name="Sentiment" type="TEXT"/>
+        </var_folder>
+    </variables>
+    <settings>
+    </settings>
+    <specialSettings>
+    </specialSettings>
+</dialog>

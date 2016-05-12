@@ -5,6 +5,8 @@ The [facebook-watson-bot](https://github.com/nheidloff/facebook-watson-bot) proj
 
 The sample bot shows recent tweets with a positive or negative sentiment about a specific topic via the [Insights for Twitter](https://console.ng.bluemix.net/catalog/services/insights-for-twitter) service. Check out the [screenshots](https://github.com/nheidloff/facebook-watson-bot/tree/master/screenshots) folder for more information.
 
+The left screenshot shows the usage of the Dialog service, the right column shows additionally the Natural Language Classifier.
+
 ![alt text](https://raw.githubusercontent.com/nheidloff/facebook-watson-bot/master/screenshots/facebookbot5.png "Buzz Bot for Facebook")
 
 Author: Niklas Heidloff [@nheidloff](http://twitter.com/nheidloff)
@@ -21,7 +23,7 @@ Make sure the following tools are installed and on your path.
 * [git](https://git-scm.com/downloads)
 * [cf](https://github.com/cloudfoundry/cli#downloads)
 
-You need to create a Facebook app, a Facebook page, setup a webhook, define a verification secrete and get an access token. Follow the [Facebook Messenger Platform Getting Started](https://developers.facebook.com/docs/messenger-platform/quickstart) documentation for details.
+You need to create a Facebook app, a Facebook page, setup a webhook, define a verification secret and get an access token. Follow the [Facebook Messenger Platform Getting Started](https://developers.facebook.com/docs/messenger-platform/quickstart) documentation for details.
 
 
 Setup of the Application on Bluemix
@@ -47,13 +49,13 @@ After you've done the initial 'cf push' you should change manifest.yml and repla
 Setup of the Natural Language Classifier Service
 ================================================================================
 
-In order to configure the Watson Natural Language Classifier invoke the follwing command.
+In order to configure the Watson Natural Language Classifier invoke the follwing command. You can get your Watson credentials from the dashboard of this service in Bluemix.
 
 ```sh
-curl -i -u "<username>":"<password>" -F training_data=@./data_train.csv -F training_metadata="{\"language\":\"en\",\"name\":\"PosNegClassifier\"}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
+curl -i -u "<username>":"<password>" -F training_data=@./nlc-training.csv -F training_metadata="{\"language\":\"en\",\"name\":\"PosNegClassifier\"}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
 ```
 
-Copy and paste the classifier id in dialog.xml (row 36).
+Copy and paste the classifier id in dialog.xml ([row 36](https://github.com/nheidloff/facebook-watson-bot/blob/master/dialog.xml#L36)).
 
 
 Setup of the Dialog Service
@@ -69,7 +71,7 @@ Setup of the Facebook Bot
 
 Follow the [Facebook Messenger Platform Getting Started](https://developers.facebook.com/docs/messenger-platform/quickstart) instructions for how to verify the callback and how to get an access token.
 
-Copy and paste the access token from Facebook and the secret you chose in app.js or in the Bluemix environment variables. After this push the application again.
+Copy and paste the access token from Facebook and the secret you chose in app.js or in the Bluemix environment variables 'TOKEN' and 'SECRET'. After this push the application again.
 
 In order to set up the welcome message of the bot run the curl command defined in setupbot.txt.
 

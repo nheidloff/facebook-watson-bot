@@ -5,7 +5,7 @@ The [facebook-watson-bot](https://github.com/nheidloff/facebook-watson-bot) proj
 
 The sample bot shows recent tweets with a positive or negative sentiment about a specific topic via the [Insights for Twitter](https://console.ng.bluemix.net/catalog/services/insights-for-twitter) service. Check out the [screenshots](https://github.com/nheidloff/facebook-watson-bot/tree/master/screenshots) folder for more information.
 
-![alt text](https://raw.githubusercontent.com/nheidloff/facebook-watson-bot/master/screenshots/facebookbot2.png "Buzz Bot for Facebook")
+![alt text](https://raw.githubusercontent.com/nheidloff/facebook-watson-bot/master/screenshots/facebookbot5.png "Buzz Bot for Facebook")
 
 Author: Niklas Heidloff [@nheidloff](http://twitter.com/nheidloff)
 
